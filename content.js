@@ -1,9 +1,6 @@
 // Fill in words or phrases to replace.
 //           "keyphrase": "replacement phrase"
-var dictionary = { "kadigan": "thingamagig",
-                   "Person A": "Alice", 
-                   "Person B": "Bob",
-                   "East Cupcake": "Podunk"};
+var dictionary = { "\u05DB\u05D5\u05DC\u05DD\u2063": "\u05DB\u05D5\u05DC\u05CB!!"};
 
 // TreeWalker did not behave as I expected, so we'll do it with explicit recursion.
 function textNodesUnder(node){
@@ -21,7 +18,7 @@ for (node of textNodes) {
     var originalText = node.nodeValue;
     var text = originalText;
     for (phraseToReplace in dictionary) {
-        var pattern = new RegExp('\\b(' + phraseToReplace + ')\\b', 'ig');
+        var pattern = new RegExp('(' + phraseToReplace + ')', 'ig');
         var tooltip = "Originally:"
         var chars = Math.max(tooltip.length, phraseToReplace.length + 10);
         var replacement = '<span class="tooltip">' + dictionary[phraseToReplace] + 
